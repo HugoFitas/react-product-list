@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
+import ProductList from "./components/ProductList";
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -16,7 +17,11 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <ProductList allProducts={allProducts} />
+    </div>
+  );
 }
 
 export default App;
